@@ -11,12 +11,12 @@
               </tr>
             </thead>
             <tbody class="text-center">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td><button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> </button></td>
+              <tr *ngFor="let persona of dataservices.listaPersonas ; index as i">
+                <td>{{i + 1}}</td>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellidos}}</td>
+                <td>{{persona.carrera}}</td>
+                <td><button class="btn btn-danger" (click)="eliminarRegistro(i)" ><i class="fa-solid fa-trash-can"></i> </button></td>
               </tr>
             </tbody>
           </table>

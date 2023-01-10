@@ -9,7 +9,7 @@
                     <!---------Nombre---------------------->
                     <div class="mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control input__border" id="nombre" name="nombre" placeholder="Nombre"  >
+                            <input type="text" class="form-control input__border" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" >
                             <label for="nombre" class="form-label label__color">Nombre</label>
                         </div>  
                     </div>
@@ -18,7 +18,7 @@
                     <!---------Apellido---------------------->
                     <div class="mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control input__border" id="apellido" name="apellido" placeholder="apellido"  >
+                            <input type="text" class="form-control input__border" id="apellido" name="apellido" placeholder="apellido" [(ngModel)]="apellidos"  >
                             <label for="apellido" class="form-label label__color">Apellido</label>
                         </div>  
                     </div>
@@ -27,18 +27,18 @@
             
             <!------------Carrera------------------->
             <div class="mb-3">
-                <select class="form-select input__border select__color" aria-label="Default select example" name="select" >
+                <select class="form-select input__border select__color" aria-label="Default select example" name="select" [(ngModel)]="carrera" >
                     <option value="" disabled>Carrera</option>
-                    <option value="Soltero">Ing. Industrial</option>
-                    <option value="Casado">Ing. Informática</option>
-                    <option value="Viudo">Medicina</option>
-                    <option value="Divorciado">Neurologia</option>
+                    <option value="Ing. Industrial">Ing. Industrial</option>
+                    <option value="Ing. Informática">Ing. Informática</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Neurología">Neurología</option>
                   </select>  
             </div>
 
             <!-----------boton-------------------->
             <div class="mb-3">
-                <button class="btn bg__btn w-100"  >Enviar</button>
+                <button class="btn bg__btn w-100" (click)="agregarRegistro()" >Enviar</button>
             </div>
         </form>
     </div>

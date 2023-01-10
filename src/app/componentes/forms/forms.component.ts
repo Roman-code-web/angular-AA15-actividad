@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/servicios/data.service';
 
 @Component({
   selector: 'app-forms',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent {
-  tituloForm="Formulario de Registro"
+  tituloForm="Formulario de Registro";
+  //1.Declaro variables
+  nombre!:string;
+  apellidos!:string;
+  carrera:string="";
+  listaRegistro:any=[]=[];
+
+  //3.constructor para el data service
+  constructor(public dataservices:DataService){};
+
+  //2.funciona que agrega 
+  agregarRegistro(){
+    this.listaRegistro.push({'nombre': this.nombre, 'apellidos':this.apellidos,'carrera':this.carrera});
+    console.log(this.listaRegistro)
+    this.dataservices.listaPersonas=this.listaRegistro;
+  };
 }
