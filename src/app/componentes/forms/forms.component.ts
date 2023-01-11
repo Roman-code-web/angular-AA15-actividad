@@ -32,9 +32,5 @@ export class FormsComponent implements OnInit {
       this.listaRegistro=this.dataservices.listaPersonas;
     }
     
-    console.log("-------lista registro---------")
-    console.log( this.listaRegistro);
-    console.log("-------data sevices---------")
-    console.log( this.dataservices.listaPersonas);
   }
 }

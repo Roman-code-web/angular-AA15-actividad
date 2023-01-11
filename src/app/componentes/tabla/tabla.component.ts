@@ -37,7 +37,5 @@ export class TablaComponent implements OnInit  {
   
   }
   ngOnInit(): void {
-    console.log("--------data Service tabla--------")
-    console.log(this.dataservices.listaPersonas);
   }
 }

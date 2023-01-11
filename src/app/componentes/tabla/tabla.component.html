@@ -18,9 +18,9 @@
                <ng-template #divTablasinDatos>
                     <tr *ngFor="let persona of dataservices.listaPersonas ; index as i" >
                         <td>{{i + 1 }}</td>
-                        <td>{{persona.nombre}}</td>
-                        <td>{{persona.apellidos}}</td>
-                        <td>{{persona.carrera}}</td>
+                        <td>{{persona.nombre | uppercase}}</td>
+                        <td>{{persona.apellidos | uppercase}}</td>
+                        <td>{{persona.carrera | uppercase}}</td>
                         <td><button class="btn btn-danger" (click)="eliminarRegistro(i,persona.nombre)" ><i class="fa-solid fa-trash-can"></i> </button></td>
                     </tr>
                </ng-template>
