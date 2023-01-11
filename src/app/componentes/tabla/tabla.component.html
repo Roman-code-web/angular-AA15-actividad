@@ -1,7 +1,8 @@
 <div class="container rounded-3 bg-light">
-    <div class="container py-5  w-100">
-        <table class="table  ">
-            <thead class="bg__tabla text-center">
+    <h2 class="text-center fs-2 fw-bold titulo__color pt-3">Lista Registro</h2>
+    <div class="container py-4  " style="overflow-x: scroll !important; ">
+        <table class="table table-responsive" >
+            <thead class="bg__tabla text-center ">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">NOMBRE</th>
@@ -11,13 +12,19 @@
               </tr>
             </thead>
             <tbody class="text-center">
-              <tr *ngFor="let persona of dataservices.listaPersonas ; index as i">
-                <td>{{i + 1}}</td>
-                <td>{{persona.nombre}}</td>
-                <td>{{persona.apellidos}}</td>
-                <td>{{persona.carrera}}</td>
-                <td><button class="btn btn-danger" (click)="eliminarRegistro(i)" ><i class="fa-solid fa-trash-can"></i> </button></td>
-              </tr>
+               <tr class="" *ngIf="dataservices.listaPersonas.length==0 || dataservices.listaPersonas[0].nombre=='' else divTablasinDatos">
+                    <td colspan="5" class="bg-primary bg-opacity-25 fw-bold text-primary "><i class="fa-solid fa-triangle-exclamation pe-2"></i>No hay Registros, Porfavor rellena el formulario</td>
+               </tr> 
+               <ng-template #divTablasinDatos>
+                    <tr *ngFor="let persona of dataservices.listaPersonas ; index as i" >
+                        <td>{{i + 1 }}</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.apellidos}}</td>
+                        <td>{{persona.carrera}}</td>
+                        <td><button class="btn btn-danger" (click)="eliminarRegistro(i,persona.nombre)" ><i class="fa-solid fa-trash-can"></i> </button></td>
+                    </tr>
+               </ng-template>
+               
             </tbody>
           </table>
     </div>
