@@ -1,0 +1,15 @@
+.nav__link__a{
+    color: #000 !important;
+    margin: 0px 20px;
+    padding: 5px 20px !important;
+    text-align: center !important;
+    border-radius: 15px;
+}
+.nav__link__a:hover{
+    background: #FC466B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff !important;
+    margin: 0px 20px;
+
+}
