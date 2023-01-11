@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/servicios/data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataService } from 'src/app/servicios/data.service';
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
-export class FormsComponent {
+export class FormsComponent implements OnInit {
   tituloForm="Formulario de Registro";
   //1.Declaro variables
   nombre!:string;
@@ -20,7 +20,21 @@ export class FormsComponent {
   //2.funciona que agrega 
   agregarRegistro(){
     this.listaRegistro.push({'nombre': this.nombre, 'apellidos':this.apellidos,'carrera':this.carrera});
-    console.log(this.listaRegistro)
     this.dataservices.listaPersonas=this.listaRegistro;
   };
+  ngOnInit(): void {
+    //si esta vacio
+    if(this.dataservices.listaPersonas.length==0 || this.dataservices.listaPersonas[0].nombre==''){
+      this.dataservices.listaPersonas=this.listaRegistro;
+      
+    }else{
+      //si tiene datos
+      this.listaRegistro=this.dataservices.listaPersonas;
+    }
+    
+    console.log("-------lista registro---------")
+    console.log( this.listaRegistro);
+    console.log("-------data sevices---------")
+    console.log( this.dataservices.listaPersonas);
+  }
 }

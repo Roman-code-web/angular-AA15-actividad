@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/servicios/data.service';
 import Swal from 'sweetalert2';
 
@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   templateUrl: './tabla.component.html',
   styleUrls: ['./tabla.component.css']
 })
-export class TablaComponent   {
+export class TablaComponent implements OnInit  {
   
   //1. declaro el constructor del dataService
   constructor(public dataservices:DataService){}
@@ -35,5 +35,9 @@ export class TablaComponent   {
       }
     })
   
+  }
+  ngOnInit(): void {
+    console.log("--------data Service tabla--------")
+    console.log(this.dataservices.listaPersonas);
   }
 }
